@@ -20,7 +20,6 @@ form.addEventListener('submit', function(event) {
   }
 
   // Opcional: Verificar formatação do telefone com REGEX
-  // Exemplo simples de regex para (99) 99999-9999 ou (99) 9999-9999
   const telefoneRegex = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/;
   if (!telefoneRegex.test(telefone)) {
     alert("O telefone deve estar no formato (99) 99999-9999 ou (99) 9999-9999");
@@ -29,25 +28,20 @@ form.addEventListener('submit', function(event) {
 
   // Se passou na validação, podemos inserir na tabela
   const novaLinha = document.createElement('tr');
-  
-  // Criando células
+
   const colunaNome = document.createElement('td');
   const colunaTelefone = document.createElement('td');
 
   colunaNome.textContent = nome;
   colunaTelefone.textContent = telefone;
 
-  // Adiciona as células à linha
   novaLinha.appendChild(colunaNome);
   novaLinha.appendChild(colunaTelefone);
 
-  // Adiciona a linha à tabela
   tabelaContatos.appendChild(novaLinha);
 
-  // Adicionar o telefone ao array para referência futura
   listaTelefones.push(telefone);
 
-  // Limpar campos
   nomeInput.value = '';
   telefoneInput.value = '';
 });
