@@ -1,7 +1,7 @@
 const form = document.getElementById('contactForm');
 const tabelaContatos = document.getElementById('tabelaContatos');
 
-// Vamos manter um array para checagem de telefones repetidos
+// array para checagem de telefones repetidos
 let listaTelefones = [];
 
 form.addEventListener('submit', function(event) {
@@ -19,7 +19,7 @@ form.addEventListener('submit', function(event) {
     return;
   }
 
-  // Opcional: Verificar formatação do telefone com REGEX
+  //Verificar formatação do telefone com REGEX
   const telefoneRegex = /^\(\d{2}\)\s?\d{4,5}-\d{4}$/;
   if (!telefoneRegex.test(telefone)) {
     alert("O telefone deve estar no formato (99) 99999-9999 ou (99) 9999-9999");
